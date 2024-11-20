@@ -1,17 +1,41 @@
+import { useState } from "react";
+import "./Home.css"
 import { Link } from "react-router-dom";
 
-export function Home(){
+export function Home() {
+  const [toogle, setToogle] = useState('')
+  const handleToogle = () => {
+    alert('oi')
+  }
   return(
     <div className="bg-black text-white h-full">
       <header className="bg-slate-900 w-screen h-36 flex flex-col justify-center items-center sticky top-0">
+        
         <Link to="/" className="absolute left-5 duration-200 hover:-rotate-45 hover:scale-125">
           <i className="text-3xl bi bi-arrow-left-circle"></i>
         </Link>
+
+        <Link to="/" className="absolute right-16 duration-200 hover:-rotate-45 hover:scale-125">
+          <i className="text-4xl bi bi-list menu-mobile"></i>
+        </Link>
+
         <h1 className="text-3xl">Home</h1>
-        <ul className="flex gap-2 mt-3 ">
+        
+        <ul className="flex gap-2 mt-3 menu">
             <li className="p-5 hover:bg-slate-800 rounded-md cursor-pointer"> <a href="#basic">Básico</a> </li>
             <li className="p-5 hover:bg-slate-800 rounded-md cursor-pointer"> <a href="#medium">Intermediário</a> </li>
             <li className="p-5 hover:bg-slate-800 rounded-md cursor-pointer"> <a href="#advanced">Avançado</a> </li>
+        </ul>
+
+        <ul className={`menu-mobile2 ${toogle}`}>
+            <li className="m-10">
+              <button onClick={ handleToogle } className="bg-red-700 h-10 w-10 rounded-full fixed right-14 top-3">
+                  <i className="text-2xl bi bi-x-octagon"></i>
+              </button> 
+            </li>
+            <li className="p-5 rounded-md cursor-pointer text-white bg-slate-800 mt-3"> <a href="#basic">Básico</a> </li>
+            <li className="p-5 rounded-md cursor-pointer text-white bg-slate-800" > <a href="#medium">Intermediário</a> </li>
+            <li className="p-5 rounded-md cursor-pointer text-white bg-slate-800"> <a href="#advanced">Avançado</a> </li>
         </ul>
       </header>
 
