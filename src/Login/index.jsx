@@ -5,8 +5,8 @@ export function Login(){
     <div className="w-[300px] bg-slate-800 h-96 rounded-md p-5">
         <form className="flex flex-col gap-8">
           <h1 className="text-white text-3xl text-center">Login</h1>
-          <input className="w-full p-2 rounded-md" type="text" placeholder="E-amil" />
-          <input className="w-full p-2 rounded-md" type="password" placeholder="*********" />
+          <input className="w-full p-2 rounded-md placeholder:text-black outline-none text-xl" type="text" placeholder="E-amil" />
+          <input className="w-full p-2 rounded-md placeholder:text-black outline-none text-xl" type="password" placeholder="*********" />
           <div className="btn-group">
             <Link to="/home">
               <button className="bg-violet-800 p-2 rounded-md w-full text-white text-1xl">Entrar</button>
